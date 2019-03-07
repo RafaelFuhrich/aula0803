@@ -2,7 +2,7 @@ angular.module('todoApp', [])
   .controller('TodoListController', function() {
     var todoList = this;
     todoList.todos = [
-      {text:'Me deixar fazer parte da sua vida', done:false}];
+      {text:'Uma mulher especial', done:false}];
  
     todoList.addTodo = function() {
       todoList.todos.push({text:todoList.todoText, done:false});
