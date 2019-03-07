@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+    <script src="mulher.js"></script>
+    <link rel="stylesheet" type="text/css" href="mulher.css">
+    <meta charset="utf-8">
+  </head>
+<body>
+ 
+<div>
+      <div id="aba">
+      <label>Parabéns para </label>
+      <input type="text" ng-model="titulo" placeholder="Mulher especial">
+      </div>
+
+      
+      <h1>{{titulo}}, parabéns!</h1>
+    </div>
+    <div ng-controller="TodoListController as todoList" id="lista">
+      
+     <p>Você é</p>
+      <ul class="unstyled">
+        <li ng-repeat="todo in todoList.todos">
+          <label class="checkbox">
+            
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+          </label>
+        </li>
+      </ul>
+
+      <form ng-submit="todoList.addTodo()">
+        <input type="text" ng-model="todoList.todoText"  size="30"
+               placeholder="Características">
+        <input class="btn-primary" type="submit" value="Adicionar">
+      </form>
+
+      <span><br>Você é especial por muitp mais do que {{todoList.remaining()}} motivos</span>
+    </div>
+
+</div>
+
+</body>
+</html>
